@@ -10,9 +10,10 @@ public class Order {
         this.orderLines = new ArrayList<>();
     }
 
-    public void addOrderLine(OrderLine line){
+    public void addOrderLine(OrderLine line) {
         orderLines.add(line);
     }
+
     public Client getClient() {
         return client;
     }
@@ -25,15 +26,15 @@ public class Order {
         return orderLines;
     }
 
-    public double calculateTotalBeforeDiscount(){
+    public double calculateTotalBeforeDiscount() {
         double totalPrice = 0.0;
-        for(OrderLine line : orderLines){
-           totalPrice += line.calculateLineTotal();
+        for (OrderLine line : orderLines) {
+            totalPrice += line.calculateLineTotal();
         }
         return totalPrice;
     }
 
-    public double calculateOrderTotal(){
+    public double calculateOrderTotal() {
         double orderTotal = 0.0;
         double beforeDiscount = calculateTotalBeforeDiscount();
         double basicDiscountAmount = client.getBasicDiscount() * beforeDiscount;
@@ -41,10 +42,10 @@ public class Order {
         orderTotal = beforeDiscount - basicDiscountAmount;
 
         double additionalDiscountRate = 0.0;
-        if (orderTotal > 30000){
+        if (orderTotal > 30000) {
             additionalDiscountRate = client.getVolumeDiscountThreshold2();
 
-        } else if(orderTotal > 10000){
+        } else if (orderTotal > 10000) {
             additionalDiscountRate = client.getVolumeDiscountThreshold1();
         }
         double additionalDiscountAmount = orderTotal * additionalDiscountRate;
@@ -53,7 +54,7 @@ public class Order {
         return orderTotal - additionalDiscountAmount;
     }
 
-    public double calculateBasicDiscountAmount(){
+    public double calculateBasicDiscountAmount() {
         double totalOrderAmount = 0.0;
         return totalOrderAmount *= client.getBasicDiscount() / 100;
 

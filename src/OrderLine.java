@@ -34,15 +34,15 @@ public class OrderLine {
             standardUnitPrice = unitCost + markup;
         }
 
-        return Math.round(standardUnitPrice * 100.0)/100.0;
+        return Math.round(standardUnitPrice * 100.0) / 100.0;
     }
 
-    public double calculatePromotionalUnitPrice(){
+    public double calculatePromotionalUnitPrice() {
         double promotionalUnitPrice = calculateStandardUnitPrice();
 
-        if (product.getPromotion().equals("30% off")){
+        if (product.getPromotion().equals("30% off")) {
             promotionalUnitPrice *= 0.7;
-        } else if(product.getPromotion().equals("Buy 2, get 3rd free") && quantity >= 3){
+        } else if (product.getPromotion().equals("Buy 2, get 3rd free") && quantity >= 3) {
             int freeItems = quantity / 3;
             double totalPriceForAllItems = quantity * calculateStandardUnitPrice();
             double valueOfFreeItems = freeItems * calculateStandardUnitPrice();
@@ -52,7 +52,7 @@ public class OrderLine {
         return Math.round(promotionalUnitPrice * 100000.0) / 100000.0;
     }
 
-    public double calculateLineTotal(){
+    public double calculateLineTotal() {
 
         return calculatePromotionalUnitPrice() * quantity;
     }

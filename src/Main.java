@@ -22,7 +22,7 @@ public class Main {
         }
 
 
-        for (OrderLine line: order.getOrderLines()){
+        for (OrderLine line : order.getOrderLines()) {
             System.out.println("Client;     " + order.getClient().getName());
             System.out.println("Product:    " + order.getOrderLines().get(0).getProduct().getName());
             System.out.println("Quantity:   " + order.getOrderLines().get(0).getQuantity());
@@ -30,8 +30,8 @@ public class Main {
             System.out.println("Promotional Price:  " + order.getOrderLines().get(0).calculatePromotionalUnitPrice());
             System.out.println("Line Total:     " + order.getOrderLines().get(0).calculateLineTotal());
             System.out.println("Total Before Discount:      " + order.calculateTotalBeforeDiscount());
-            if (order.calculateBasicDiscountAmount() == 0){
-                System.out.println("Additional Volume Discount:     "  + order.calculateBasicDiscountAmount());
+            if (order.calculateBasicDiscountAmount() == 0) {
+                System.out.println("Additional Volume Discount:     " + order.calculateBasicDiscountAmount());
             } else {
                 System.out.println("Additional Volume Dsicount at " + order.calculateBasicDiscountAmount() + ":");
             }
