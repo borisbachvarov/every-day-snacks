@@ -31,7 +31,7 @@ public class Order {
         for (OrderLine line : orderLines) {
             totalPrice += line.calculateLineTotal();
         }
-        return totalPrice;
+        return Math.round(totalPrice * 100.0)/100.0;
     }
 
     public double calculateOrderTotal() {
