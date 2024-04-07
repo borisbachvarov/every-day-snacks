@@ -1,5 +1,9 @@
 package test.java;
 
+import main.java.Client;
+import main.java.Order;
+import main.java.OrderLine;
+import main.java.Product;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
