@@ -1,11 +1,28 @@
 package main.java;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();      //Ex. input: 5,1=10000,4=20000
+        String filePath = "src/main/resources/orderdetails.txt";
+        StringBuilder inputBuilder = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                inputBuilder.append(line);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading from file: " + e.getMessage());
+            return;
+        }
+
+        String input = inputBuilder.toString();
+
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
         String[] parts = input.split(",");
 
         int clientId = Integer.parseInt(parts[0]);
