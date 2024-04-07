@@ -1,3 +1,5 @@
+package main.java;
+
 public class OrderLine {
     private Product product;
     private int quantity;

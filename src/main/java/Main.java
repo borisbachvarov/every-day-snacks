@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.Scanner;
 
 public class Main {
@@ -26,10 +28,10 @@ public class Main {
 
     }
     private static void displayOrderSummary(Order order) {
-        System.out.println("\nOrder Summary:");
-        System.out.println("Client: " + order.getClient().getName() + "\n");
+        System.out.println("\nmain.java.Order Summary:");
+        System.out.println("main.java.Client: " + order.getClient().getName() + "\n");
 
-        System.out.printf("%-15s %-10s %-20s %-25s %s\n", "Product", "Quantity", "Standard Unit Price", "Promotional Unit Price", "Line Total");
+        System.out.printf("%-15s %-10s %-20s %-25s %s\n", "main.java.Product", "Quantity", "Standard Unit Price", "Promotional Unit Price", "Line Total");
         for (OrderLine line : order.getOrderLines()) {
             String promoPrice = line.getProduct().getPromotion() != null ? String.format("EUR %.5f", line.calculatePromotionalUnitPrice()) : "-";
             System.out.printf("%-15s %-10d EUR %-18.2f %-25s EUR %.2f\n",
@@ -60,12 +62,12 @@ public class Main {
         }
 
         if (basicDiscountAmount > 0) {
-            System.out.println("Basic Client Discount: EUR " + String.format("%.2f", basicDiscountAmount));
+            System.out.println("Basic main.java.Client Discount: EUR " + String.format("%.2f", basicDiscountAmount));
         }
         if (additionalDiscountAmount > 0) {
             System.out.println(String.format("Additional Volume Discount at %.0f%%: EUR %.2f", additionalDiscountRate * 100, additionalDiscountAmount));
         }
 
-        System.out.println("Order Total Amount: EUR " + String.format("%.2f", totalAfterBasicDiscount));
+        System.out.println("main.java.Order Total Amount: EUR " + String.format("%.2f", totalAfterBasicDiscount));
     }
 }

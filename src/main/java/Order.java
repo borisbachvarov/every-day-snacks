@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,12 +55,5 @@ public class Order {
 
         return orderTotal - additionalDiscountAmount;
     }
-
-    public double calculateBasicDiscountAmount() {
-        double totalOrderAmount = 0.0;
-        return totalOrderAmount *= client.getBasicDiscount() / 100;
-
-    }
-
 
 }
