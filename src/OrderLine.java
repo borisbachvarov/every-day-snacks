@@ -54,6 +54,6 @@ public class OrderLine {
 
     public double calculateLineTotal(){
 
-        return ((calculatePromotionalUnitPrice() * quantity) * 100.0) / 100.0;
+        return calculatePromotionalUnitPrice() * quantity;
     }
 }

@@ -22,19 +22,22 @@ public class Main {
         }
 
 
-        System.out.println("Client:     " + order.getClient().getName());
-        System.out.println("Product 1:      " + order.getOrderLines().get(0).getProduct().getName());
-        System.out.println("Product 2:      " + order.getOrderLines().get(1).getProduct().getName());
-        System.out.println("Quantity 1:     " + order.getOrderLines().get(0).getQuantity());
-        System.out.println("Quantity 2:     " + order.getOrderLines().get(1).getQuantity());
-        System.out.println("Standard Unit Price 1:        " + order.getOrderLines().get(0).calculateStandardUnitPrice());
-        System.out.println("Standard Unit Price 2:        " + order.getOrderLines().get(1).calculateStandardUnitPrice());
-        System.out.println("Promotional Price 1:        " + order.getOrderLines().get(0).calculatePromotionalUnitPrice());
-        System.out.println("Promotional Price 2:        " + order.getOrderLines().get(1).calculatePromotionalUnitPrice());
-        System.out.println("Line Total 1:       " + order.getOrderLines().get(0).calculateLineTotal());
-        System.out.println("Line Total 2:       " + order.getOrderLines().get(1).calculateLineTotal());
-        System.out.println("Total before Client Discount:       "  + order.calculateTotalBeforeDiscount());
-        System.out.println("Additional Volume Discount:         " );
-        System.out.println("Order Total:        " + order.calculateOrderTotal());
+        for (OrderLine line: order.getOrderLines()){
+            System.out.println("Client;     " + order.getClient().getName());
+            System.out.println("Product:    " + order.getOrderLines().get(0).getProduct().getName());
+            System.out.println("Quantity:   " + order.getOrderLines().get(0).getQuantity());
+            System.out.println("Standard Unit Price:    " + order.getOrderLines().get(0).calculateStandardUnitPrice());
+            System.out.println("Promotional Price:  " + order.getOrderLines().get(0).calculatePromotionalUnitPrice());
+            System.out.println("Line Total:     " + order.getOrderLines().get(0).calculateLineTotal());
+            System.out.println("Total Before Discount:      " + order.calculateTotalBeforeDiscount());
+            if (order.calculateBasicDiscountAmount() == 0){
+                System.out.println("Additional Volume Discount:     "  + order.calculateBasicDiscountAmount());
+            } else {
+                System.out.println("Additional Volume Dsicount at " + order.calculateBasicDiscountAmount() + ":");
+            }
+
+            System.out.println("Order Total:    " + order.calculateOrderTotal());
+        }
+
     }
 }
