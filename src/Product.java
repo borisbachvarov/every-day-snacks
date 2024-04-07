@@ -1,15 +1,15 @@
 public class Product {
     private int id;
     private String name;
-    private double unitPrice;
+    private double unitCost;
     private double markup;
     private String promotion;
 
-    public Product(int id, String name, double unitPrice, double markup, String promotion) {
+    public Product(int id, String name, double unitCost, double markup, String promotion) {
         this.id = id;
         this.name = name;
         this.markup = markup;
-        this.unitPrice = unitPrice;
+        this.unitCost = unitCost;
         this.promotion = promotion;
     }
 
@@ -29,12 +29,12 @@ public class Product {
         this.name = name;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
+    public double getUnitCost() {
+        return unitCost;
     }
 
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+    public void setUnitCost(double unitCost) {
+        this.unitCost = unitCost;
     }
 
     public double getMarkup() {
