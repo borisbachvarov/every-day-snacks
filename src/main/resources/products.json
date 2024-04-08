@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Danish Muffin",
+    "cost": 0.52,
+    "price": 0.8,
+    "promotion": null
+  },
+  {
+    "id": 2,
+    "name": "Granny's Cup Cake",
+    "cost": 0.38,
+    "price": 1.2,
+    "promotion": "30% off"
+  },
+  {
+    "id": 3,
+    "name": "Frenchy's Croissant",
+    "cost": 0.41,
+    "price": 0.9,
+    "promotion": null
+  },
+  {
+    "id": 4,
+    "name": "Crispy Chips",
+    "cost": 0.60,
+    "price": 1.0,
+    "promotion": "Buy 2, get 3rd free"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "ABC Distribution",
+    "discountRate": 0.05,
+    "overdueFee": 0.00,
+    "interestRate": 0.02
+  },
+  {
+    "id": 2,
+    "name": "DEF Foods",
+    "discountRate": 0.04,
+    "overdueFee": 0.01,
+    "interestRate": 0.02
+  },
+  {
+    "id": 3,
+    "name": "GHI Trade",
+    "discountRate": 0.03,
+    "overdueFee": 0.01,
+    "interestRate": 0.03
+  },
+  {
+    "id": 4,
+    "name": "JKL Kiosks",
+    "discountRate": 0.02,
+    "overdueFee": 0.03,
+    "interestRate": 0.05
+  },
+  {
+    "id": 5,
+    "name": "MNO Vending",
+    "discountRate": 0.00,
+    "overdueFee": 0.05,
+    "interestRate": 0.07
+  }
+]
+

@@ -13,6 +13,23 @@ public class ProductManager {
         products.put(4, new Product(4, "Crispy Chips", 0.60, 1.0, "Buy 2, get 3rd free"));
     }
 
+//Code block for getting products from a json file
+//    static {
+//        loadProductsFromJson("src/main/java/resources/products.json");
+//    }
+//
+//    private static void loadProductsFromJson(String filePath) {
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            List<Product> productList = mapper.readValue(new File(filePath), new TypeReference<List<Product>>() {
+//            });
+//            for (Product product : productList) {
+//                products.put(product.getId(), product);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
     public static Product getProductById(int id) {
         return products.get(id);
     }

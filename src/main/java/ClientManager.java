@@ -1,5 +1,4 @@
 package main.java;
-
 import java.util.HashMap;
 
 public class ClientManager {
@@ -13,6 +12,25 @@ public class ClientManager {
         clients.put(4, new Client(4, "JKL Kiosks", 2, 0.03, 0.05));
         clients.put(5, new Client(5, "MNO Vending", 0, 0.05, 0.07));
     }
+
+//Code block for getting clients from a json file
+//    static {
+//        loadClientsFromJson("src/main/java/resources/clients.json");
+//    }
+//
+//    private static void loadClientsFromJson(String filePath) {
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            List<Client> clientList = mapper.readValue(new File(filePath), new TypeReference<List<Client>>() {
+//            });
+//            for (Client client : clientList) {
+//                clients.put(client.getId(), client);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
 
     public static Client getClientById(int id) {
         return clients.get(id);
